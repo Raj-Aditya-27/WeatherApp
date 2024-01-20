@@ -1,6 +1,7 @@
 let weather = {
     apiKey: "ffee8fe64a4ef177a4b2d26a54744fa2",
     fetchWeather: function (city) {
+
         fetch(
             "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey
         ).then((Response) => {
@@ -10,7 +11,10 @@ let weather = {
             }
             return Response.json();
         })
-            .then((data) => this.displayWeather(data));
+            .then((data) => {
+                localStorage.setItem("lastSearchedCity", city);
+                this.displayWeather(data);
+            })
     },
 
     displayWeather: function (data) {
@@ -43,4 +47,11 @@ document.querySelector("#searchBar").addEventListener("keyup", function (event) 
     }
 })
 
-weather.fetchWeather("Mumbai");
+const lastSearchedCity = localStorage.getItem('lastSearchedCity');
+
+if (lastSearchedCity) {
+    weather.fetchWeather(lastSearchedCity);
+}
+else {
+    weather.fetchWeather("Mumbai");
+}
