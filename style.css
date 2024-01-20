@@ -78,10 +78,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10%;
+    column-gap: 13%;
     height: 50%;
-    width: 100%;
-    /* border: 1px solid wheat; */
+    width: 120%;
     font-weight: bold;
     font-size: 120%;
     flex-wrap: wrap;
@@ -92,4 +91,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.loading{
+    visibility: hidden;
+}
+
+.loadingIndication{
+    color: white;
+    font-size: larger;
 }
