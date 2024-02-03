@@ -1,22 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#container{
-   height: 100vh;
-   width: 100vw;
-   background-image: url("bg.jpg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-family: 'Open Sans', sans-serif;
+#container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#weatherDiv{
+#weatherDiv {
     height: 60vh;
     width: 60vw;
     margin-top: 8%;
@@ -28,10 +28,10 @@
     border-radius: 30px;
 }
 
-#searchBar{
+#searchBar {
     border: 1px solid white;
     height: 8vh;
-    width: 80%; 
+    width: 80%;
     display: flex;
     align-items: center;
     padding-left: 5%;
@@ -43,11 +43,11 @@
     border-radius: 30px;
 }
 
-#searchBar:hover{
+#searchBar:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-#searchInput{
+#searchInput {
     height: 60%;
     width: 90%;
     outline: none;
@@ -58,12 +58,12 @@
     font-family: inherit;
 }
 
-#searchIcon:hover{
+#searchIcon:hover {
     color: lightblue;
 }
 
-#temperatureDiv{
-    height:50%;
+#temperatureDiv {
+    height: 50%;
     width: 80%;
     /* border: 1px solid white; */
     border-radius: 30px;
@@ -74,7 +74,7 @@
     justify-content: space-around;
 }
 
-.weatherDetails{
+.weatherDetails {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,36 +86,46 @@
     flex-wrap: wrap;
 }
 
-.temperature{
+.temperature {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.loading{
+.loading {
     visibility: hidden;
 }
 
-.loadingIndication{
+.loadingIndication {
     color: white;
     font-size: larger;
 }
 
 @media screen and (max-width:1080px) {
-    #weatherDiv{
+    #weatherDiv {
         width: 90%;
         height: 80%;
     }
-   .weatherDetails{
-    display: grid;
-    grid-template-rows: repeat(2, 2.5fr);
-    grid-template-columns: repeat(2, 2.5fr);
-    grid-row-gap: 30%;
-    height: 50%;
-   }
 
-   #description{
-    text-align: center;
-   }
+    .weatherDetails {
+        display: grid;
+        grid-template-rows: repeat(2, 2.5fr);
+        grid-template-columns: repeat(2, 2.5fr);
+        grid-row-gap: 30%;
+        height: 50%;
+    }
+
+    #description {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:1024px) {
+
+    #searchInput,
+    .city,
+    .weatherDetails {
+        font-size: 1.2rem;
+    }
 }
